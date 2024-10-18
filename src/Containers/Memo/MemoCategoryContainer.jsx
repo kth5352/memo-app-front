@@ -11,10 +11,10 @@ const MemoCategoryContainer = ({ categories = [], onCategoryChange }) => {
   };
 
   // 통신 부분이 필요할 때 사용할 수 있는 useEffect 예시
-  // useEffect(() => {
-  //   // 여기서 API 호출로 카테고리 데이터를 받아와서
-  //   // categories state를 업데이트할 수 있습니다.
-  // }, []);
+  useEffect(() => {
+    // 여기서 API 호출로 카테고리 데이터를 받아와서
+    // categories state를 업데이트할 수 있습니다.
+  }, []);
 
   return (
     <MemoCategoryComponent

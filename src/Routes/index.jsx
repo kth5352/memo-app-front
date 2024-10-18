@@ -3,6 +3,7 @@ import SearchId from "../Pages/Login/SearchId";
 import SearchPw from "../Pages/Login/SearchPw";
 import Register from "../Pages/Login/Register";
 import Main from "../Pages/Main";
+import Memo from "../Pages/Memo";
 // import Document from "../Pages/Document";
 // import Issue from "../Pages/Issue";
 
@@ -26,6 +27,7 @@ const publicRoutes = [
 
 const authenticatedRoutes = [
   { path: "/main", element: Main },
+  { path: "memo/:id", element: Memo },
   // { path: "/issue", element: Issue },
 ];
 
