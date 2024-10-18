@@ -38,7 +38,7 @@ const LayoutWrapper = styled.div`
 
 const SideBarWrapper = styled.div`
   width: 240px;
-  height: 100%-5px; /* Header를 제외한 나머지 영역을 모두 차지 */
+  height: calc(100%-5px); /* Header를 제외한 나머지 영역을 모두 차지 */
   overflow-y: hidden; /* 사이드바 자체에서 스크롤이 생기지 않도록 설정 */
   border: solid 1px blue;
 `;

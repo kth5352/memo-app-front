@@ -18,7 +18,7 @@ const MainComponent = (props) => {
         />
       </MemoTitle>
       <MemoContent>
-        <textar ea id="content" />
+        <textarea id="content" />
       </MemoContent>
     </div>
   );
