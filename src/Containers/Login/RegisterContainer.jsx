@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import RegisterComponent from "../../Components/Login/RegisterComponent";
-import axios from "axios"; // axios 추가
+import axios from "axios";
 
 const RegisterContainer = () => {
   const navigate = useNavigate();
