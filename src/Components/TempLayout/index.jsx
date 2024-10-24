@@ -32,14 +32,15 @@ const HeaderWrapper = styled.div`
 const LayoutWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  height: calc(100vh - 60px); /* Header의 높이를 제외한 화면 크기 */
-  margin-top: 60px; /* Header 높이만큼 위쪽 공간 확보 */
+  height: calc(97vh - 60px); /* Header의 높이를 제외한 화면 크기 */
+  margin-top: 80px; /* Header 높이만큼 위쪽 공간 확보 */
 `;
 
 const SideBarWrapper = styled.div`
   width: 240px;
   height: calc(100%-5px); /* Header를 제외한 나머지 영역을 모두 차지 */
   overflow-y: hidden; /* 사이드바 자체에서 스크롤이 생기지 않도록 설정 */
+  overflow-x: hidden; /* 사이드바 자체에서 스크롤이 생기지 않도록 설정 */
   border: solid 1px blue;
 `;
 

@@ -1,6 +1,3 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-
 import styled from "styled-components";
 import InputForm from "../Common/InputForm";
 
@@ -11,7 +8,6 @@ const LoginComponent = (props) => {
     userPw,
     idError,
     pwError,
-    handleSignin,
     handleIdChange,
     handlePwChange,
     handleFormSubmit,
@@ -44,14 +40,6 @@ const LoginComponent = (props) => {
           </button>
         </div>
         <Actions>
-          <ActionItem onClick={() => handleNavigate("/searchid")}>
-            아이디 찾기
-          </ActionItem>
-          |
-          <ActionItem onClick={() => handleNavigate("/searchpw")}>
-            비밀번호 찾기
-          </ActionItem>
-          |
           <ActionItem onClick={() => handleNavigate("/register")}>
             회원가입
           </ActionItem>

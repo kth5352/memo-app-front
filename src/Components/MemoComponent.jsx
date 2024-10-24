@@ -1,24 +1,46 @@
 import styled from "styled-components";
-import MemoCategoryContainer from "../Containers/Memo/MemoCategoryContainer";
 
-const MemoComponent = (props) => {
-  const { categories, onCategoryChange } = props;
-
+const MemoComponent = ({
+  memoTitle,
+  setMemoTitle,
+  memoContent,
+  setMemoContent,
+  categories,
+  selectedCategoryId, // 선택된 카테고리 ID
+  onCategoryChange,
+  onSave,
+  handleDelete,
+}) => {
   return (
     <div>
       <MemoTitle>
-        <input id="title" type="text" />
-        <ButtonBlock>
-          <button>저장</button>
-          <button>삭제</button>
-        </ButtonBlock>
-        <MemoCategoryContainer
-          categories={categories}
-          onCategoryChange={onCategoryChange}
+        <input
+          id="title"
+          type="text"
+          value={memoTitle}
+          onChange={(e) => setMemoTitle(e.target.value)}
         />
+        <ButtonBlock>
+          <button onClick={onSave}>저장</button>
+          <button onClick={handleDelete}>삭제</button>{" "}
+        </ButtonBlock>
+        <select
+          value={selectedCategoryId}
+          onChange={(e) => onCategoryChange(e.target.value)}
+        >
+          {categories.map((category) => (
+            <option key={category.categoryId} value={category.categoryId}>
+              {category.categoryName}
+            </option>
+          ))}
+        </select>
       </MemoTitle>
       <MemoContent>
-        <textarea id="content" />
+        <textarea
+          id="content"
+          value={memoContent}
+          onChange={(e) => setMemoContent(e.target.value)}
+        />
       </MemoContent>
     </div>
   );
@@ -38,6 +60,10 @@ const MemoTitle = styled.div`
   #title {
     width: 80%;
   }
+  select {
+    margin-left: 10px;
+    padding: 5px;
+  }
 `;
 
 const MemoContent = styled.div`
@@ -45,7 +71,7 @@ const MemoContent = styled.div`
   #content {
     width: 100%;
     height: 500px;
-    resize: none; /* 사용자가 크기를 조정하지 못하도록 함 */
+    resize: none;
     overflow-y: auto;
     vertical-align: top;
     padding: 10px;

@@ -6,22 +6,14 @@ const RegisterComponent = (props) => {
     userId,
     userPw,
     userPw2,
-    userName,
-    userEmail,
     idError,
     pwError,
     pw2Error,
-    nameError,
-    emailError,
     handleIdChange,
     handlePwChange,
     handlePw2Change,
-    handleNameChange,
-    handleEmailChange,
-    handleEmailDomainChange,
     handleFormSubmit,
     handleNavigate,
-    emailDomain,
   } = props;
   console.log(props); // 이 부분을 추가해서 함수가 제대로 전달되는지 확인
 
@@ -55,40 +47,7 @@ const RegisterComponent = (props) => {
           onChange={handlePw2Change}
           value={userPw2}
         />
-        <InputForm
-          title="이름"
-          inputTitle="Name"
-          eMsgColor={nameError ? "red" : "white"}
-          eMsgContent={nameError ? "이름을 입력해 주세요" : ""}
-          onChange={handleNameChange}
-          value={userName}
-        />
-        <EmailForm>
-          <EmailInput>
-            <InputForm
-              title="이메일"
-              inputTitle="Email"
-              eMsgColor={emailError ? "red" : "white"}
-              eMsgContent={emailError ? "이메일을 입력해 주세요" : ""}
-              onChange={handleEmailChange}
-              value={userEmail}
-            />
-          </EmailInput>
 
-          <AtSymbol>@</AtSymbol>
-          <InputWrapper>
-            <EmailSelectWrapper>
-              <EmailSelect
-                value={emailDomain}
-                onChange={handleEmailDomainChange}
-              >
-                <option value="gmail.com">gmail.com</option>
-                <option value="naver.com">naver.com</option>
-                <option value="hanmail.net">hanmail.net</option>
-              </EmailSelect>
-            </EmailSelectWrapper>
-          </InputWrapper>
-        </EmailForm>
         <div>
           <button type="button" onClick={handleFormSubmit}>
             가입하기
@@ -105,10 +64,6 @@ const RegisterComponentBlock = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-`;
-
-const EmailInput = styled.div`
-  margin-top: 3px;
 `;
 
 const RegisterForm = styled.div`
@@ -140,51 +95,6 @@ const RegisterForm = styled.div`
   button:hover {
     background-color: #4a78ba;
   }
-`;
-
-const EmailForm = styled.div`
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-`;
-
-const InputWrapper = styled.div`
-  flex: 1;
-  border-bottom: 1px solid grey;
-`;
-
-const AtSymbol = styled.span`
-  padding: 0 5px;
-  font-size: 1em;
-  color: #333;
-  margin-left: 15px;
-`;
-
-const EmailSelectWrapper = styled.div`
-  position: relative;
-  width: 110%;
-  &::after {
-    content: "▼";
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    pointer-events: none;
-    color: #4a78ba;
-    font-size: 0.8em;
-  }
-`;
-
-const EmailSelect = styled.select`
-  width: 100%;
-  padding: 10px;
-  border: none;
-  outline: none;
-  background-color: transparent;
-  font-size: 1em;
-  appearance: none;
-  -webkit-appearance: none;
-  cursor: pointer;
 `;
 
 const ActionItem = styled.span`

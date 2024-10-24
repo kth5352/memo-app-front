@@ -1,6 +1,5 @@
+import EditPw from "../Pages/EditPw";
 import Login from "../Pages/Login/Login";
-import SearchId from "../Pages/Login/SearchId";
-import SearchPw from "../Pages/Login/SearchPw";
 import Register from "../Pages/Login/Register";
 import Main from "../Pages/Main";
 import Memo from "../Pages/Memo";
@@ -12,14 +11,6 @@ const publicRoutes = [
   { path: "/", element: Login },
   { path: "/login", element: Login },
   {
-    path: "/searchid",
-    element: SearchId,
-  },
-  {
-    path: "/searchpw",
-    element: SearchPw,
-  },
-  {
     path: "/register",
     element: Register,
   },
@@ -28,7 +19,7 @@ const publicRoutes = [
 const authenticatedRoutes = [
   { path: "/main", element: Main },
   { path: "memo/:id", element: Memo },
-  // { path: "/issue", element: Issue },
+  { path: "/editPw", element: EditPw },
 ];
 
 // 추가로 필요한게 생각나면 위 형식대로 만들면 됨
