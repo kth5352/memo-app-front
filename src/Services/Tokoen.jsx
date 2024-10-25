@@ -1,17 +1,13 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 
-export const checkTokenValidity = async () => {
-  const navigate = useNavigate();
-  console.log("test");
+export const checkTokenValidity = async (navigate) => {
   const token = localStorage.getItem("token");
   if (!token) {
-    return false; // 토큰이 없으면 false 반환
+    navigate("/login"); // 토큰이 없으면 로그인 페이지로 이동
+    return;
   }
 
   try {
-    // 서버에 토큰 유효성 검사를 요청
     await axios.get("http://localhost:8080/verifyToken", {
       headers: {
         Authorization: `Bearer ${token}`,

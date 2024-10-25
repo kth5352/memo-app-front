@@ -35,7 +35,7 @@ const SBCategoryComponent = ({
               >
                 {category.categoryName}
               </CategoryButton>
-              <EditButton>수정</EditButton>
+              {/* <EditButton>수정</EditButton> */}
               <DeleteButton
                 onClick={() => handleDeleteCategory(category.categoryId)}
               >
@@ -107,16 +107,16 @@ const CategoryButton = styled.button`
     background-color: #f0f0f0;
   }
 `;
-const EditButton = styled.div`
-  background-color: blue;
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  &:hover {
-    background-color: blue;
-  }
-`;
+// const EditButton = styled.div`
+//   background-color: blue;
+//   color: white;
+//   border: none;
+//   padding: 10px;
+//   cursor: pointer;
+//   &:hover {
+//     background-color: blue;
+//   }
+// `;
 const DeleteButton = styled.button`
   background-color: #ff4f4f;
   color: white;

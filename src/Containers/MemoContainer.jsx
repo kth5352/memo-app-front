@@ -4,8 +4,6 @@ import axios from "axios";
 import MemoComponent from "../Components/MemoComponent";
 import { checkTokenValidity } from "../Services/Tokoen";
 
-checkTokenValidity();
-
 const MemoContainer = () => {
   const { id } = useParams(); // URL의 메모 id
   const navigate = useNavigate();
@@ -86,6 +84,7 @@ const MemoContainer = () => {
   };
 
   useEffect(() => {
+    checkTokenValidity();
     fetchMemo();
     fetchCategories(); // 카테고리 불러오기
   }, [id]);
